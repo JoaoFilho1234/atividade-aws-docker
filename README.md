@@ -14,3 +14,5 @@ AWS para estáticos do container de aplicação
 Wordpress
 - configuração do serviço de Load Balancer
 AWS para a aplicação Wordpress
+
+## Configuração da Maquina EC2
