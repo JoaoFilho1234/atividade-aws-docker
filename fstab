@@ -1,0 +1,3 @@
+#
+UUID=3443a7e4-b334-4ab5-a41f-6389879ce2fe     /           xfs    defaults,noatime  1   1
+fs-019e4be08a1b115f4.efs.us-east-1.amazonaws.com:/ /efs   efs    defaults          0   0
