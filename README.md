@@ -16,3 +16,5 @@ Wordpress
 AWS para a aplicação Wordpress
 
 ## Configuração da Maquina EC2
+
+Amazon linux 2
