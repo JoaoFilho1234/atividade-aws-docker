@@ -18,5 +18,5 @@ AWS para a aplicação Wordpress
 ## Configuração da instância EC2
 
 | TIPO DA INSTÂNCIA | AMI | ARMAZENAMENTO |
-| --- | ----------- |
-| t3.small | AWS Linux | 8GiB (gp2)  |
+| --- | ----------- | ----------- |
+| t3.small | AWS Linux | 8GiB (gp2) |
