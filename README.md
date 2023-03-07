@@ -74,4 +74,17 @@ services:
 ```
 - Para subir o containers da aplicação usando o arquivo acima. Usa o comando ``docker-compose up -d`` .
 
+## Configuração do EFS para estáticos do container Wordpress
 
+Primeiramente na AWS vamos em EFS pra criar um novo.
+Depois de confiruado e criado o efs na AWS vamos configurar a instância para funcionar com o efs.
+Para isso usamos os seguintes comandos:
+```sh
+$ sudo yum -y install git rpm-build make
+$ git clone https://github.com/aws/efs-utils
+$ cd efs-utils
+$ make rpm
+$ sudo yum -y install build/amazon-efs-utils*rpm
+```
+- Vamos criar a pastar na raiz /efs para salvar os arquivos com o comando ``mkdir -p /efs``
+- E Por fim, montamos ``sudo mount -t efs -o tls DNS:/ /efs`` .
