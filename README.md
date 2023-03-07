@@ -88,3 +88,24 @@ $ sudo yum -y install build/amazon-efs-utils*rpm
 ```
 - Vamos criar a pastar na raiz /efs para salvar os arquivos com o comando ``mkdir -p /efs``
 - E Por fim, montamos ``sudo mount -t efs -o tls DNS:/ /efs`` .
+
+## Configuração Load Balancer AWS
+
+- Dentro da AWS vamos em grupo de destino >> criar target group.
+- No tipo selecionamos instancia 
+- Damos um nome para o grupo
+- Protocolo HTTP port 8080
+- Selecionamos a VPC
+- Seleciona a(s) instancia(s) e criar target group
+
+- Agora para criar o Load Balancer
+- Load Balancer >> Create load balancer
+- Tipo Application Load Balancer >> create
+- Da um nome para o load balancer
+- Expor para internet
+- ipv4
+- Seleciona a VPC e as Availability Zones e uma subnet por zona
+- Seleciona o grupo de segurança
+- Listener: HTTP Port 8080
+- Seleciona o grupo de destino
+- Create load balancer
