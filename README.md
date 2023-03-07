@@ -15,6 +15,8 @@ Wordpress
 - configuração do serviço de Load Balancer
 AWS para a aplicação Wordpress
 
-## Configuração da Maquina EC2
+## Configuração da instância EC2
 
-Amazon linux 2
+| TIPO DA INSTÂNCIA | AMI | ARMAZENAMENTO |
+| --- | ----------- |
+| t3.small | AWS Linux | 8GiB (gp2)  |
