@@ -39,3 +39,39 @@ chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 ```
 OBS: Esse user_data.sh está fazendo a instalação do docker, apache, git, docker-compose e outras ferramentas necessarias para o funcionamento do docker.
+
+## Deploy Aplicação Wordpress mais Mysql
+
+Para fazer o deploy da aplicação foi utilizado o seguinte Dockercompose:
+
+```sh
+version: "3"
+services:
+    db:
+        image: mysql:8.0.19
+        command: '--default-authentication-plugin=mysql_native_password'
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress
+            MYSQL_ROOT_PASSWORD: 1234*
+        volumes:
+            - ./bd-data:/var/lib/mysql
+    wep-app:
+        image: wordpress:latest
+        ports:
+            - "8080:80"
+        volumes:
+            - ./app-data:/var/www/html/
+        links:
+            - db
+        environment:
+          WORDPRESS_DB_HOST: db:3306
+          WORDPRESS_DB_USER: wordpress
+          WORDPRESS_DB_PASSWORD: wordpress
+```
+- Para subir o containers da aplicação usando o arquivo acima. Usa o comando ``docker-compose up -d`` .
+
+
